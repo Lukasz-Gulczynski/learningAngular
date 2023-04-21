@@ -1,0 +1,22 @@
+
+<h3>Books</h3>
+<ul>
+    <li *ngFor="let book of books">
+        <span>{{book.ISBN}}</span>
+        <span>{{book.title}}</span>
+        <span>{{book.author}}</span>
+        <button (click)="onClick(book)">Zaznacz</button>
+    </li>
+</ul>
+
+<div *ngIf="selectedBook">
+    <display-book 
+        [ISBN]="selectedBook.ISBN" 
+        [author]="selectedBook.author" 
+        [title]="selectedBook.title" 
+        [genre]="selectedBook.genre" 
+        [description]="selectedBook.description"
+        (deselect)="deselectBook()">   
+    </display-book>
+</div>
+

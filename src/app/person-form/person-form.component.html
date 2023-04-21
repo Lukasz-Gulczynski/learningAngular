@@ -1,0 +1,99 @@
+<input class="form-control"/>
+
+<div class="container">
+    <form (ngSubmit)="onFormSubmit()" #postForm="ngForm">
+        <h3>Formularz dodawania osoby</h3>
+    <div class="form-group">
+        <label for="name">Imię</label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="person.name"/>
+
+        <div class="alet alert-danger" [hidden]="!isNameNullOrEmpty">
+            Imię jest wymagane
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">Nazwisko</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="person.lastName"/>
+
+        <div class="alet alert-danger" [hidden]="!isLastNameNullOrEmpty">
+            Nazwisko jest wymagane
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="age">Wiek</label>
+        <input type="number" class="form-control" id="age" name="age" [(ngModel)]="person.age"/>
+    </div>
+
+    <div class="form-group">
+        <label for="birthDate">Data urodzenia</label>
+        <input type="date" class="form-control" id="birthDate" name="birthDate" [(ngModel)]="person.birthDate"/>
+    </div>
+
+    <div class="form-group">
+        <label for="profession">Profesja</label>
+        <select class="form-control" id="profession" name="profession" [(ngModel)]="person.profession">
+            <option *ngFor="let prof of professions" [value]="prof">{{prof}}</option>
+        </select>
+    </div>
+
+<input type="submit" />
+<button (click)="goToEdit()">Przejdź do edycji</button>
+
+<!-- <button class="btn btn-succes" (click)="btnClick()">Zapisz</button> -->
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <input class="form-control"/>
+
+<div class="container">
+    <h3>Formularz dodawania osoby</h3>
+
+    <div class="form-group">
+        <label for="name">Imię</label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="person.name"/>
+
+        <div class="alet alert-danger" [hidden]="!isNameNullOrEmpty">
+            Imię jest wymagane
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">Nazwisko</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="person.lastName"/>
+
+        <div class="alet alert-danger" [hidden]="!isLastNameNullOrEmpty">
+            Nazwisko jest wymagane
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="age">Wiek</label>
+        <input type="number" class="form-control" id="age" name="age" [(ngModel)]="person.age"/>
+    </div>
+
+    <div class="form-group">
+        <label for="birthDate">Data urodzenia</label>
+        <input type="date" class="form-control" id="birthDate" name="birthDate" [(ngModel)]="person.birthDate"/>
+    </div>
+
+    <div class="form-group">
+        <label for="profession">Profesja</label>
+        <select class="form-control" id="profession" name="profession" [(ngModel)]="person.profession">
+            <option *ngFor="let prof of professions" [value]="prof">{{prof}}</option>
+        </select>
+    </div>
+
+    <button class="btn btn-succes" (click)="btnClick()">Zapisz</button>
+</div> -->
